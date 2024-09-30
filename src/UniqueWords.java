@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class UniqueWords
 {
@@ -9,15 +10,17 @@ public class UniqueWords
    */
    public static int countUnique(ArrayList<String> list)
    {
-	  int count = 0;
-	  
-      for (int i = 0; i < list.size(); i++)
-      {		 for (int j = 0; j < list.size(); j++)
-		 {
-			
-		 }
+      // Create a HashSet to store unique strings
+      HashSet<String> uniqueWords = new HashSet<>();
+      
+      // Add all strings from the list to the HashSet
+      for (String word : list)
+      {
+         uniqueWords.add(word);
       }
-	  return count;
+      
+      // The size of the HashSet is the number of unique words
+      return uniqueWords.size();
    }
 
    public static void main(String[] args)
@@ -35,3 +38,4 @@ public class UniqueWords
       System.out.println(words + " has " + unique + " unique words");
    }
 }
+
